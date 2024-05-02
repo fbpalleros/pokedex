@@ -1,3 +1,9 @@
+-- Creacion de base de datos
+CREATE DATABASE IF NOT EXISTS test;
+
+-- Seleccion de la base de datos creada
+USE test;
+
 -- Crear la table 
 CREATE TABLE pokemon (
     id INT AUTO_INCREMENT PRIMARY KEY,
