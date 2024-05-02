@@ -15,7 +15,7 @@ CREATE TABLE pokemon (
 );
 
 
--- Insertar Pokemones
+-- Insertar Pokemones.-
 INSERT INTO pokemon (numero_identificador, imagen, nombre, tipo, descripcion) 
 VALUES ('PIK001', 'pikachu', 'Pikachu', 'Electrico', 'Un pequeño Pokémon roedor que tiene electricidad almacenada en sus mejillas.');
 INSERT INTO pokemon (numero_identificador, imagen, nombre, tipo, descripcion) 
