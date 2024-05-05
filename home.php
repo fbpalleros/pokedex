@@ -31,12 +31,15 @@ if( isset($_SESSION["usuario"])  ){
             </form>
         </div>
     </nav>
-
-    <form class="d-flex" role="search" method="GET">
-        <input class="form-control me-2" type="search" placeholder="Buscar por nombre o tipo o numero identificador"
-            name="search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar Pokemon</button>
+    <form class="row" role="search" method="GET">
+        <div class="input-group mb-3 ">
+            <input class="form-control" type="search" placeholder="Buscar por nombre o tipo o numero identificador"
+                name="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">¿Quien es este pokemon?</button>
+        </div>
     </form>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
