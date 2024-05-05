@@ -45,13 +45,13 @@ if (!empty($search) && $noexiste){
     echo 'Pokemon no encontrado';
 }
 
-
+echo '<div class="container-fluid">';
 echo '<table class="table table-hover">';
-echo '<thead><tr><th scope="col">ID</th><th scope="col">Identificador</th><th scope="col">Imagen</th><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Descripcion</th></tr></thead>';
+echo '<thead><tr><th scope="col">Identificador</th><th scope="col">Imagen</th><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Descripcion</th></tr></thead>';
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<tbody>';
     echo '<tr onclick="window.location.href=\'informacion_pokemon.php?id='.$row['id'].'\'">';
-    echo '<td scope="row" >' . $row['id'] . '</td>';
+  
     echo '<td>' . $row['numero_identificador'] . '</td>';
     echo '<td>' . '<img src="img_pokemon/' . $row['imagen'] . '.png" alt="' . $row['imagen'] . '" width="100" height="90">' . '</td>';
     echo '<td>' . $row['nombre'] . '</td>';
@@ -60,7 +60,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '</tr>';
 }
 echo '</tbody></table>';
-
+echo '</div>';
 
 
 
