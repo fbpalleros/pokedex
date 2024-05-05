@@ -74,5 +74,3 @@ INSERT INTO login (usuario, pass)
 VALUES ('facundo', '123456');
 INSERT INTO login (usuario, pass) 
 VALUES ('ezequiel', '123456');
-INSERT INTO login (usuario, pass) 
-VALUES ('guido', '123456');
