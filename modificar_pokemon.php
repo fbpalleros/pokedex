@@ -22,11 +22,14 @@ $row = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Modificar Pokémon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container">
         <h2>Modificar Pokémon</h2>
@@ -34,23 +37,26 @@ $row = mysqli_fetch_assoc($result);
             <input type="hidden" name="pokemon_id" value="<?php echo $row['id']; ?>">
             <div class="mb-3">
                 <label for="numero_identificador" class="form-label">Número Identificador</label>
-                <input type="text" class="form-control" id="numero_identificador" name="numero_identificador" value="<?php echo $row['numero_identificador']; ?>" required>
+                <input type="text" class="form-control" id="numero_identificador" name="numero_identificador"
+                    value="<?php echo $row['numero_identificador']; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen</label>
                 <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
-                <img src="<?php echo $row['imagen']; ?>" alt="Imagen actual" width="100" height="90">
+                <img src="img_pokemon/<?php echo $row['imagen']; ?>.png" alt="Imagen actual" width="100" height="90">
             </div>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $row['nombre']; ?>" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $row['nombre']; ?>"
+                    required>
             </div>
             <div class="mb-3">
                 <label for="tipo" class="form-label">Tipo</label>
                 <select class="form-select" id="tipo" name="tipo" required>
                     <option value="Fuego" <?php if ($row['tipo'] == 'Fuego') echo 'selected'; ?>>Fuego</option>
                     <option value="Agua" <?php if ($row['tipo'] == 'Agua') echo 'selected'; ?>>Agua</option>
-                    <option value="Electrico" <?php if ($row['tipo'] == 'Electrico') echo 'selected'; ?>>Electrico</option>
+                    <option value="Electrico" <?php if ($row['tipo'] == 'Electrico') echo 'selected'; ?>>Electrico
+                    </option>
                     <option value="Planta" <?php if ($row['tipo'] == 'Planta') echo 'selected'; ?>>Planta</option>
                     <option value="Normal" <?php if ($row['tipo'] == 'Normal') echo 'selected'; ?>>Normal</option>
                     <option value="Fantasma" <?php if ($row['tipo'] == 'Fantasma') echo 'selected'; ?>>Fantasma</option>
@@ -60,10 +66,12 @@ $row = mysqli_fetch_assoc($result);
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción</label>
-                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required><?php echo $row['descripcion']; ?></textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3"
+                    required><?php echo $row['descripcion']; ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Guardar Modificación</button>
         </form>
     </div>
 </body>
+
 </html>
