@@ -23,13 +23,43 @@ if (mysqli_num_rows($result) == 0){
 }
 
 $row = mysqli_fetch_assoc($result);
+?>
 
-// Info !
-echo $row['numero_identificador'];
-echo $row['nombre'];
-echo $row['tipo'];
-echo '<img src="img_pokemon/' . $row['imagen'] . '.png" alt="' . $row['imagen'] . '" width="100" height="90">';
-echo $row['descripcion'];
-echo $row['informacion'];
+<!DOCTYPE html>
+<html lang="en">
 
-mysqli_close($conn);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informacion Pokemon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card my-3" style="max-width: 1080px" ;>
+            <div class="row g-0">
+                <div class="col-md-4 d-flex  align-items-center">
+
+                    <?php echo '<img class="img-fluid rounded start" src="img_pokemon/' . $row['imagen'] . '.png" alt="' . $row['imagen'] . '">';?>
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <div><?php echo $row['nombre']; ?> </div>
+                        </h5>
+                        <p class="card-text">
+                        <div> Numero Identificador: <?php echo $row['numero_identificador']; ?></div><br />
+                        <div> Tipo: <?php echo $row['tipo']; ?> </div><br />
+                        <div> Descripción: <?php echo $row['descripcion'];?> </div><br />
+                        <div> Información: <?php echo $row['informacion'];?> </div><br /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<?php mysqli_close($conn);?>
