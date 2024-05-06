@@ -26,8 +26,8 @@ $sql = "UPDATE pokemon
         WHERE id = '$pokemon_id'";
 
 if (mysqli_query($conn, $sql)) {
-    // Redirigir al usuario a home.php
-    header("Location: home.php");
+    // Redirigir al usuario a index.php
+    header("Location: index.php");
     exit();
 } else {
     echo "Error al guardar la modificación: " . mysqli_error($conn);
@@ -36,4 +36,3 @@ if (mysqli_query($conn, $sql)) {
 // Cerrar la conexión
 mysqli_close($conn);
 ?>
-

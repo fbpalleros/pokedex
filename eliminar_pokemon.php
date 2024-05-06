@@ -17,7 +17,7 @@ $sql = "DELETE FROM pokemon WHERE id = '$pokemon_id'";
 
 if (mysqli_query($conn, $sql)) {
     echo "El Pokémon ha sido eliminado correctamente.";
-    header("Location: home.php");
+    header("Location: index.php");
 } else {
     echo "Error al eliminar el Pokémon: " . mysqli_error($conn);
 }

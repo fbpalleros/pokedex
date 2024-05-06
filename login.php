@@ -10,7 +10,7 @@ if ( isset($_POST["usuario"]) &&  isset($_POST["pass"]) ){
     if($esValido){
         $_SESSION["usuario"] = $usuario;
 
-        header("location:home.php");
+        header("location:index.php");
         exit();
     } else {
         header("location:index.php?error=1");
@@ -24,13 +24,10 @@ if ( isset($_POST["usuario"]) &&  isset($_POST["pass"]) ){
 
 function consultarBD($usuario, $pass)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "test";
+    //Crear conexion
+    $config = parse_ini_file('configBD.ini');
 
-    // Crear conexión
-    $conn = mysqli_connect($servername, $username, $password, $database);
+    $conn = mysqli_connect($config['host'], $config['username'], $config['password'], $config['database']);
 
     // Verificar la conexión
     if (!$conn) {
