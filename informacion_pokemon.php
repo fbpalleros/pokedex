@@ -1,5 +1,4 @@
 <?php
-include_once('header.html');
 
 // Configurar el .ini 
 $config = parse_ini_file('configBD.ini');
@@ -37,6 +36,17 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="logo" width="60" height="60">
+            </a>
+            <a class="navbar-brand">Pokedex</a>
+            <div></div>
+        </div>
+
+    </nav>
+
     <div class="container-fluid d-flex justify-content-center">
         <div class="card my-3" style="max-width: 1080px" ;>
             <div class="row g-0">
@@ -61,5 +71,6 @@ $row = mysqli_fetch_assoc($result);
         </div>
     </div>
 </body>
+
 
 <?php mysqli_close($conn);?>
