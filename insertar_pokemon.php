@@ -28,10 +28,10 @@ $sql = "INSERT INTO pokemon (numero_identificador, imagen, nombre, tipo, descrip
 
 if (mysqli_query($conn, $sql)) {
     echo "Nuevo Pokémon insertado correctamente.";
-    header("Location: home.php");
+    header("Location: index.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    header("Location: home.php");
+    header("Location: index.php");
 }
 
 // Cerrar la conexión
