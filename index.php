@@ -43,7 +43,7 @@ if ($noexiste){
 
 
 if (!empty($search) && $noexiste){
-    echo '<div class="alert alert-danger d-flex justify-content-center">';
+    echo '<div class="alert alert-danger d-flex justify-content-center fw-bold">';
     echo 'Pokemon no encontrado';
     echo '</div>';
 }
